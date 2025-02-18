@@ -1,0 +1,395 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #333;
+}
+
+header {
+    background: linear-gradient(to right, #41fa6d, rgb(252, 20, 252), #61a5ec);
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5%;
+}
+
+header img {
+    width: 10%;
+    height: 50px;
+    background-color: transparent;
+    border: none;
+}
+
+header h1 {
+    margin: 0;
+    color: white;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(to right, #41fa6d, rgb(252, 20, 252), #61a5ec);
+    padding: 20px;
+    text-align: center;
+    color: white;
+    margin-top: 30px;
+}
+
+/* Welcome Section */
+#welcome-section {
+    text-align: center;
+    padding: 50px;
+    background-color: #e6ffe6;
+    border: 2px solid #28a745;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 6%;
+}
+
+#welcome-section h2 {
+    color: #28a745;
+}
+
+#enter-catalog-btn {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#enter-catalog-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Age and Gender Selection Section */
+#age-selection-section {
+    text-align: center;
+    margin-bottom: 16%;
+}
+
+#ageSelector, #genderSelector {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin: 0 10px; /* Added margin for spacing */
+}
+
+/* Enter Button */
+#enterSelectionBtn {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    padding: 10px 20px; /* Padding for the button */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Font size */
+    margin-top: 50px; /* Space above the button */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transition for hover effect */
+}
+
+#enterSelectionBtn:hover {
+    background-color: #45a049; /* Darker green on hover */
+    transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
+#enterSelectionBtn:active {
+    transform: scale(0.95); /* Slightly shrink the button when clicked */
+}
+
+/* Catalog Section */
+#catalog {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.item {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.item:hover {
+    transform: translateY(-5px);
+}
+
+.item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px; /* Add some space below the image */
+}
+
+#search-bar {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#searchInput {
+    padding: 10px;
+    width: 50%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Back Button */
+#backBtn {
+    background-color: #007BFF; /* Blue background */
+    color: white; /* White text */
+    padding: 10px 20px; /* Padding for the button */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Font size */
+    margin-bottom: 20px; /* Space below the button */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+#backBtn:hover {
+    background-color : #0056b3; /* Darker blue on hover */
+}
+
+/* Pagination */
+#pagination-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+#pagination-controls button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 0 10px;
+}
+
+#pagination-controls button:hover {
+    background-color: #1c7430;
+}
+
+#pageInfo {
+    font-size: 16px;
+}
+
+/* Cart */
+#cart {
+    background-color: #fff0f6;
+    padding: 20px;
+    border: 1px solid #ff80bf;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#cart h3 {
+    color: #ff3385;
+}
+
+#cartItems {
+    list-style-type: none;
+    padding: 0;
+}
+
+#cartItems li {
+    margin-bottom: 10px;
+}
+
+/* Style for the cart icon container */
+#cartIcon button {
+    position: fixed; /* Fixed position to stay at the top right */
+    top: 100px; /* Distance from the top */
+    right: 5px; /* Distance from the right */
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Center items vertically */
+    background-color: #fff; /* White background for better visibility */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 50%; /* Rounded corners */
+    padding: 10px; /* Padding around the icon */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    z-index: 1000; /* Ensure it appears above other elements */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+#cartIcon button:hover {
+    transform: scale(1.05); /* Slightly enlarge the icon on hover */
+}
+
+#backToCatalog {
+    background-color: #007BFF; /* Blue background */
+    border: none; /* Remove borders */
+    color: white; /* White text */
+    padding: 12px 24px; /* Add some padding */
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+    font-size: 18px; /* Increase font size */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+#backToCatalog:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+#downloadBtn, #backToCatalog {
+    margin-top: 20px;
+}
+
+/* Style for the cart icon image */
+#cartIconImage {
+    width: 30px; /* Set a fixed width for the icon */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 5px; /* Space between icon and count */
+}
+
+/* Style for the item count */
+#cartItemCount {
+    font-weight: bold; /* Make the count bold */
+    color: #333; /* Dark text color */
+}
+
+#totalPrice {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Specific styles for the download cart button */
+#downloadBtn {
+    background-color: #007BFF; /* Blue background */
+    border: none; /* Remove borders */
+    color: white; /* White text */
+    padding: 12px 24px; /* Add some padding */
+    font-size: 18px; /* Increase font size */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+/* Hover effect for download button */
+#downloadBtn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Style for the items per page selector */
+#itemsPerPageSelector {
+    padding: 10px; /* Add some padding */
+    margin-bottom: 20px;
+    font-size: 16px; /* Increase font size */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #fff; /* White background */
+    transition: border-color 0.3s; /* Smooth transition for border color */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+/* Change border color on focus */
+#itemsPerPageSelector:focus {
+    border-color: #007BFF; /* Change border color to blue on focus */
+    outline: none; /* Remove default outline */
+}
+
+/* Style for the label */
+label {
+    font-size: 16px; /* Increase font size */
+    margin-right: 10px; /* Add some space between label and dropdown */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Stack header elements vertically */
+    }
+
+    header img {
+        width: 20%; /* Increase logo size on smaller screens */
+    }
+
+    #searchInput {
+        width: 80%; /* Full width on smaller screens */
+    }
+
+    #catalog {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust grid for smaller screens */
+    }
+
+    #backToCatalog, #downloadBtn {
+        width: 100%; /* Full width buttons on smaller screens */
+        padding: 15px; /* Increase padding for touch targets */
+    }
+
+    #enter-catalog-btn, #enterSelectionBtn {
+        width: 100%; /* Full width buttons on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 18px; /* Smaller font size for mobile */
+        padding-top: 20px;
+    }
+
+    #ageSelector, #genderSelector, #itemsPerPageSelector {
+        width: 100%; /* Full width for selectors on mobile */
+        margin: 10px 0; /* Add margin for spacing */
+    }
+
+    #searchInput {
+        font-size: 14px; /* Smaller font size for mobile */
+    }
+
+    #pagination-controls {
+        flex-direction: column; /* Stack pagination controls vertically */
+    }
+
+    #pagination-controls button {
+        width: 100%; /* Full width buttons on mobile */
+        margin: 5px 0; /* Add margin for spacing */
+    }
+
+    /* #backToCatalog{
+        margin-top: 20px;
+        top: 125px;
+        left: 5px;
+        width: 50%;
+        margin: 20px ;
+    } */
+
+    #cartIcon button {
+        top: 150px; /* Adjust distance from top */
+        right: 5px; /* Adjust distance from right */
+    }
+    
+    #cart{
+        margin-top: 50px;
+    }
+}

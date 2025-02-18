@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Catalog</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <img src="The-Little-Big_Kid-Company-Logo.webp" alt="LBK Logo">
+        <h1>LBK Catalog</h1>
+     
+    </header>
+
+    <main>
+        <!-- Welcome Message Section -->
+        <section id="welcome-section">
+            <h2>Hello LBK Shoppers!</h2>
+            <p>Welcome to the LBK catalog where you get to pick or select the item you want.</p>
+            <button id="enter-catalog-btn">Enter Catalog</button>
+        </section>
+    
+        <!-- Age and Gender Selection Section -->
+        <section id="age-selection-section" class="hidden">
+            <h2>Select an Age Group and Gender</h2>
+            <nav>
+                <select id="ageSelector">
+                    <option value="">Choose an age range</option>
+                    <option value="0-3">Ages 0-3</option>
+                    <option value="4-7">Ages 4-7</option>
+                    <option value="8-12">Ages 8-12</option>
+                    <option value="13-upwards">Ages 13 and Up</option>
+                    <option value="adult">Adult</option>
+                </select>
+                <select id="genderSelector">
+                    <option value="">Choose a gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </nav>
+            <button id="enterSelectionBtn">Enter</button>
+        </section>
+
+        <div id="cartIcon" style="display: none;">
+            <button id="cartButton">
+                <img src="Images/cartIcon.png" alt="Cart" id="cartIconImage" />
+                <span id="cartItemCount">0</span> <!-- To show the number of items in the cart -->
+            </button>
+        </div>
+    
+        <!-- Catalog Section -->
+        <section id="catalog-section" class="hidden">
+            <button id="backBtn">Back To Selection</button>
+            
+            <div id="search-bar">
+                <input type="text" id="searchInput" placeholder="Search for items...">
+            </div>
+        
+            <label for="itemsPerPageSelector">Items per page:</label>
+            <select id="itemsPerPageSelector">
+                <option value="2">2</option>
+                <option value="4">4</option>
+                <option value="6">6</option>
+                <option value="10">10</option>
+            </select>
+        
+            <div id="catalog" class="catalog"></div>
+        
+            <div id="pagination-controls">
+                <span id="pageInfo"></span>
+            </div>
+        </section>
+
+        <!-- Cart Section (Separate from Catalog) -->
+        <section id="cart" class="hidden">
+            <h3>Your Cart</h3>
+            <ul id="cartItems"></ul>
+            <p id="totalPrice">Total: $0.00</p>
+            <button id="downloadBtn">Download Cart</button>
+            <button id="backToCatalog">Back to Catalog</button>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 LBK Catalog</p>
+    </footer>
+    <script src="index.js"></script>
+</body>
+</html>
