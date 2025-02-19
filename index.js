@@ -263,21 +263,44 @@ document.addEventListener('DOMContentLoaded', () => {
 // Modify the displayItems function
 function displayItems() {
     const catalog = document.getElementById('catalog');
-    const start = (currentPage - 1) * itemsPerPage; // Assuming 2 items per page
-    const end = start + itemsPerPage;
-    const pageItems = filteredItems.slice(start, end);
+    const start = (currentPage - 1) * itemsPerPage; // Calculate the starting index
+    const end = start + itemsPerPage; // Calculate the ending index
+    const pageItems = filteredItems.slice(start, end); // Get the items for the current page
 
     catalog.innerHTML = pageItems
         .map(item => `<div class="item">
-            <img src="${item.image}" alt="${item.name}">
-            <h3>${item.name}</h3>
-            <p>Price: $${item.price}</p>
+            <img src="${item.image}" alt="${item.name}" class="item-image" onclick="openModal('${item.image}', '${item.name}')">
+            <h3>${item.name}</h3> <!-- Display the item name -->
+            <p>Price: $${item.price}</p> <!-- Display the item price -->
             <button onclick="addToCart('${item.id}')">Add to Cart</button>
         </div>`)
         .join('');
 
+    // Update pagination info
     document.getElementById('pageInfo').textContent = `Page ${currentPage} of ${Math.ceil(filteredItems.length / itemsPerPage)}`; // Update page info based on items per page
 }
 
-// Initial call to display items after filtering
-displayItems();
+// Function to open the modal
+function openModal(imageSrc, imageName) {
+    const modal = document.getElementById("imageModal");
+    const modalImage = document.getElementById("modalImage");
+    const caption = document.getElementById("caption");
+
+    modal.style.display = "block"; // Show the modal
+    modalImage.src = imageSrc; // Set the image source
+    caption.innerHTML = imageName; // Set the caption
+}
+
+// Close the modal when the user clicks on <span> (x)
+document.getElementById("closeModal").onclick = function() {
+    const modal = document.getElementById("imageModal");
+    modal.style.display = "none"; // Hide the modal
+}
+
+// Close the modal when the user clicks anywhere outside of the modal
+window.onclick = function(event) {
+    const modal = document.getElementById("imageModal");
+    if (event.target == modal) {
+        modal.style.display = "none"; // Hide the modal
+    }
+}
